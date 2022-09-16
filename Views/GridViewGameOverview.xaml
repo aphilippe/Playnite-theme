@@ -61,7 +61,10 @@
                                         <Border HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Background="#1E000000" CornerRadius="0, 10, 10, 0">
                                             <Grid Margin="10">
                                                 <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" />
-                                                <TextBlock Text="{Binding Game.DisplayName}" FontSize="{DynamicResource FontSizeLarger}" TextWrapping="Wrap" DockPanel.Dock="Left" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}">
+                                                <TextBlock Text="{Binding Game.DisplayName}" FontSize="{DynamicResource FontSizeLarger}" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}">
+                                                    <TextBlock.Effect>
+                                                        <DropShadowEffect ShadowDepth="3" />
+                                                    </TextBlock.Effect>
                                                     <TextBlock.Style>
                                                         <Style TargetType="TextBlock">
                                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -77,14 +80,6 @@
                                         </Border>
                                     </Grid>
                                 </StackPanel>
-                                <DockPanel DockPanel.Dock="Top">
-                                    <Image Name="PART_ImageIcon" DockPanel.Dock="Left" MaxHeight="32" MaxWidth="32" RenderOptions.BitmapScalingMode="Fant" Margin="0,0,10,0" />
-                                    <TextBlock Text="{Binding Game.DisplayName}" FontSize="{DynamicResource FontSizeLarger}" TextWrapping="Wrap" DockPanel.Dock="Left" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}">
-                                        <TextBlock.Effect>
-                                            <DropShadowEffect ShadowDepth="3" />
-                                        </TextBlock.Effect>
-                                    </TextBlock>
-                                </DockPanel>
 
                                 <Grid DockPanel.Dock="Top" Margin="0,10,0,10" Background="Transparent">
                                     <Grid.ColumnDefinitions>
