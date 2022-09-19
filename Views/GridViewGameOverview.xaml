@@ -19,11 +19,9 @@
                             </Style>
                         </Border.Style>
                         <DockPanel>
-                            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" DockPanel.Dock="Top" Margin="0,10,15,5" />
-
-                            <TextBlock Text="{DynamicResource LOCErrorNoGameSelected}" Margin="0,20,0,0" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                            <DockPanel>
+                                <DockPanel.Style>
+                                    <Style TargetType="DockPanel">
                                         <Setter Property="Visibility" Value="Collapsed" />
                                         <Style.Triggers>
                                             <Trigger Property="DataContext" Value="{x:Null}">
@@ -31,9 +29,9 @@
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-
+                                </DockPanel.Style>
+                                <TextBlock Text="{DynamicResource LOCErrorNoGameSelected}" Margin="0,20,0,0" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </DockPanel>
                             <DockPanel DockPanel.Dock="Top">
                                 <DockPanel.Style>
                                     <Style TargetType="DockPanel">
@@ -78,6 +76,21 @@
                                                 </TextBlock>
                                             </Grid>
                                         </Border>
+                                        <Grid Grid.Column="2" HorizontalAlignment="Right" Background="Transparent">
+                                            <DockPanel>
+                                                <DockPanel.Style>
+                                                    <Style TargetType="DockPanel">
+                                                        <Setter Property="Visibility" Value="Hidden" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </DockPanel.Style>
+                                                <Button DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" />
+                                            </DockPanel>
+                                        </Grid>
                                     </Grid>
                                 </StackPanel>
 
