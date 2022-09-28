@@ -92,10 +92,13 @@
                                                         </Style>
                                                     </Border.Style>
                                                     <Grid Margin="5 2">
-                                                        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" />
+                                                        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" FontSize="22"/>
                                                         <Button Name="PART_ButtonPlayAction" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource PlayButton}" />
                                                         <Button Name="PART_ButtonContextAction" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                                        <Button Name="PART_ButtonMoreActions" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{DynamicResource LOCMoreAction}" />
+                                                        <Button Name="PART_ButtonMoreActions" VerticalAlignment="Top" 
+                                                                HorizontalAlignment="Left" Content="&#xefa2;" 
+                                                                Style="{DynamicResource SimpleButton}" 
+                                                                FontFamily="{StaticResource FontIcoFont}" FontSize="22"/>
                                                     </Grid>
                                                 </Border>
                                             </Grid>
