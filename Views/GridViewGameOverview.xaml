@@ -93,7 +93,22 @@
                                                     </Border.Style>
                                                     <Grid Margin="5 2">
                                                         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" FontSize="22"/>
-                                                        <Button Name="PART_ButtonPlayAction" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource PlayButton}" />
+                                                        <Button VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Content="&#xeca6;"
+                                                                FontFamily="{StaticResource FontIcoFont}" FontSize="72" 
+                                                                Command="{MainViewModel StartGameCommand}">
+                                                            <Button.Style>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
+                                                                            <Setter Property="Visibility" Value="Hidden" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Button.Style>
+                                                        </Button>
                                                         <Button Name="PART_ButtonContextAction" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                                         <Button Name="PART_ButtonMoreActions" VerticalAlignment="Top" 
                                                                 HorizontalAlignment="Left" Content="&#xefa2;" 
