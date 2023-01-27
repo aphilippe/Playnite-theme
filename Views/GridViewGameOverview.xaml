@@ -143,20 +143,22 @@
                                                                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}}" Value="True">
                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
+                                                                <DataTrigger Binding="{Binding ElementName=PART_ButtonMoreActions, Path=ContextMenu.IsOpen}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Border.Style>
                                                     <Grid x:Name="ActionPanel" Margin="5 2">
+                                                        <Button Content="" Background="Transparent" BorderThickness="0" ContextMenu="{Binding ElementName=PART_ButtonMoreActions, Path=ContextMenu}"/>
                                                         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Content="r" FontFamily="Marlett" Style="{DynamicResource SimpleButton}" Command="{MainViewModel CloseGameSideBarCommand}" FontSize="22"/>
                                                         <Button Name="PART_ButtonPlayAction"
                                                                 Style="{DynamicResource ContextActionButton}"
                                                                 VerticalAlignment="Center"
                                                                 HorizontalAlignment="Center"/>
                                                         <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextActionButton}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                                        <Button Name="PART_ButtonMoreActions" VerticalAlignment="Top" 
-                                                                HorizontalAlignment="Left" Content="&#xefa2;" 
-                                                                Style="{DynamicResource SimpleButton}" 
-                                                                FontFamily="{StaticResource FontIcoFont}" FontSize="22"/>
+                                                        <Button Name="PART_ButtonMoreActions" Visibility="Collapsed"/>
+                                                        
                                                     </Grid>
                                                 </Border>
                                             </Grid>
