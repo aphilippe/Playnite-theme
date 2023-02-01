@@ -9,6 +9,11 @@
         <Setter Property="FontSize" Value="25" />
     </Style>
 
+    <Style x:Key="TopActionPanelCheckbox" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
+        <Setter Property="FontSize" Value="25" />
+    </Style>
+
     <Style x:Key="ContextActionButton" TargetType="{x:Type Button}"
         BasedOn="{StaticResource TopActionPanelButton}">
         <Setter Property="FontSize" Value="72"/>
@@ -174,8 +179,8 @@
                                                                     <Setter Property="Margin" Value="10 0" />
                                                                 </Style>
                                                             </StackPanel.Resources>
-                                                            <CheckBox Content="&#xf000;" IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
-                                                            <CheckBox Content="&#xef22;" IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Hidden, Mode=TwoWay, FallbackValue={StaticResource False}}" />
+                                                            <CheckBox Content="&#xf000;" IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}" Style="{StaticResource TopActionPanelCheckbox}" />
+                                                            <CheckBox Content="&#xef22;" IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Hidden, Mode=TwoWay, FallbackValue={StaticResource False}}" Style="{StaticResource TopActionPanelCheckbox}" />
                                                         </StackPanel>
                                                     </Grid>
                                                 </Border>
