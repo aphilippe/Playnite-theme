@@ -139,6 +139,12 @@
                                                 </Style>
                                             </Grid.Style>
                                             <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Stretch" ClipToBounds="True" />
+                                            <Border Padding="10 2 10 2" 
+                                                    Background="#aed77c" CornerRadius="0 0 5 5" 
+                                                    HorizontalAlignment="Center" VerticalAlignment="Top" 
+                                                    Visibility="{Binding Game.TagIds, Mode=OneWay, Converter={PluginConverter Plugin=CletausenUtils, Converter=TagsToIsDemoVisibilityConverter}}">
+                                                <TextBlock Text="DEMO" FontWeight="Bold" />
+                                            </Border>
                                             <Grid HorizontalAlignment="Stretch" Height="Auto" MinHeight="100" VerticalAlignment="Stretch" Width="Auto">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="2*" />
