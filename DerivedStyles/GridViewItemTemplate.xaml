@@ -25,13 +25,7 @@
                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
-                                <Border Margin="0 10" Padding="10 2 15 2" 
-                                        Background="#aed77c" CornerRadius="5 0 0 5" 
-                                        HorizontalAlignment="Right" VerticalAlignment="Top" 
-                                        Visibility="{Binding Game.TagIds, Mode=OneWay, Converter={PluginConverter Plugin=CletausenUtils, Converter=TagsToIsDemoVisibilityConverter}}">
-                                    <TextBlock Text="DEMO"  
-                                               FontWeight="Bold" />
-                                </Border>
+                                <ContentControl x:Name="GameLabels_GameLabelsContainer" />
                                 <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed" />
                                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center"
                                          Name="GameControls"  Visibility="Collapsed">
